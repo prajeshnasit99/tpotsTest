@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TPots_JaPrajeshNasit – Load More PLP module
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+        <!-- Add Load More plugin to the product list toolbar -->
+    <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+        <plugin name="tpots_japrajesh_toolbar_loadmore"
+                type="TPots\JaPrajeshNasit\Plugin\Toolbar\LoadMorePlugin"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TPots_JaPrajeshNasit – Load More PLP module
+ * Injects Load More block into search result listing pages.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="category.product.list.additional">
+            <block class="TPots\JaPrajeshNasit\Block\LoadMore"
+                   name="japrajesh.loadmore.search"
+                   template="TPots_JaPrajeshNasit::catalog/product/list/load_more.phtml"
+                   after="-"/>
+        </referenceContainer>
+    </body>
+</page>

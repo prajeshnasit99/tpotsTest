@@ -1,0 +1,62 @@
+<?php
+/**
+ * TPots_JaPrajeshNasit – Load More PLP module
+ *
+ * @var \TPots\JaPrajeshNasit\Block\LoadMore $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+declare(strict_types=1);
+?>
+<?php if ($block->isEnabled()) : ?>
+<?php
+    $currentPage = $block->getCurrentPage();
+    $totalPages  = $block->getTotalPages();
+    $pageLimit   = $block->getPageLimit();
+    $ajaxUrl     = $block->getLoadMoreUrl();
+    $hasMore     = $currentPage < $totalPages;
+    
+    // Attempt to get category ID from the layout/registry
+    $categoryId = '';
+    $category = $this->getLayout()->getBlock('category.products.list') ? 
+                $this->getLayout()->getBlock('category.products.list')->getCategory() : null;
+    if ($category) {
+        $categoryId = $category->getId();
+    }
+?>
+<div id="japrajesh-load-more-wrapper"
+     class="japrajesh-load-more-wrapper"
+     data-current-page="<?= /* @noEscape */ $currentPage ?>"
+     data-total-pages="<?= /* @noEscape */ $totalPages ?>"
+     data-page-limit="<?= /* @noEscape */ $pageLimit ?>"
+     data-ajax-url="<?= $escaper->escapeUrl($ajaxUrl) ?>"
+     data-cat-id="<?= $escaper->escapeHtmlAttr($categoryId) ?>"
+     data-enabled="1">
+
+    <?php if ($hasMore) : ?>
+    <div class="japrajesh-load-more-btn-wrapper" style="text-align:center; margin: 20px 0;">
+        <button id="japrajesh-load-more-btn"
+                class="action primary japrajesh-load-more-btn"
+                type="button"
+                aria-label="<?= $escaper->escapeHtmlAttr(__('Load More Products')) ?>">
+            <span class="japrajesh-btn-text"><?= $escaper->escapeHtml(__('Load More')) ?></span>
+            <span class="japrajesh-btn-loader" style="display:none;"><?= $escaper->escapeHtml(__('Loading...')) ?></span>
+        </button>
+    </div>
+    <?php endif; ?>
+</div>
+
+<!-- style based on configuration setting -->
+<style>
+.japrajesh-load-more-btn.is-loading .japrajesh-btn-loader {
+    display: inline !important;
+}
+</style>
+
+<script type="text/x-magento-init">
+{
+    "#japrajesh-load-more-wrapper": {
+        "TPots_JaPrajeshNasit/js/load-more": {}
+    }
+}
+</script>
+<?php endif; ?>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TPots_JaPrajeshNasitCheckout – blocked shipping and payment methods
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/config.xsd">
+
+    <default>
+        <tpots_checkout>
+            <general>
+                <shipping_method>freeshipping</shipping_method>
+                <payment_method>cashondelivery</payment_method>
+            </general>
+        </tpots_checkout>
+    </default>
+
+</config>

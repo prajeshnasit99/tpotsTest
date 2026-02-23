@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TPots_JaPrajeshNasitCheckout – blocked shipping and payment methods
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Restrict  payment method based on admin configuration -->
+    <type name="Magento\Payment\Model\MethodList">
+        <plugin name="tpots_block_payment_methods"
+            type="TPots\JaPrajeshNasitCheckout\Plugin\Payment\BlockPaymentMethods" />
+    </type>
+
+    <!-- Restrict shipping method based on admin configuration -->
+    <type name="Magento\Shipping\Model\Shipping">
+        <plugin name="tpots_block_shipping_methods"
+            type="TPots\JaPrajeshNasitCheckout\Plugin\Shipping\BlockShippingMethods" />
+    </type>
+
+</config>

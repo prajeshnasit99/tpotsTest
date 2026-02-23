@@ -1,0 +1,23 @@
+
+.japrajesh-load-more-wrapper {
+    width: 100%;
+    clear: both;
+}
+.japrajesh-load-more-btn {
+    min-width: 200px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.japrajesh-load-more-btn.is-loading {
+    opacity: 0.7;
+    cursor: wait;
+}
+.japrajesh-load-more-btn.is-loading .japrajesh-btn-text {
+    display: none;
+}
+/* Hide bottom toolbar pagination when load more is active */
+.products.wrapper ~ .toolbar.toolbar-products {
+    display: none !important;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TPots_JaPrajeshNasit – Load More PLP module
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="tpots_japrajesh" frontName="japrajesh">
+            <module name="TPots_JaPrajeshNasit"/>
+        </route>
+    </router>
+</config>

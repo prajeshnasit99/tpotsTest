@@ -1,0 +1,26 @@
+<?php
+/** @var \TPots\JaPrajeshNasitFreeShippingBar\ViewModel\FreeShipping $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+
+<div id="free-shipping-bar"
+     data-bind="scope: 'freeShippingBar'">
+    <div class="free-shipping-message"
+         data-bind="text: message">
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#free-shipping-bar": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "freeShippingBar": {
+                    "component": "TPots_JaPrajeshNasitFreeShippingBar/js/freeshipping-bar",
+                    "threshold": <?= (float)$viewModel->getFreeShippingThreshold(); ?>
+                }
+            }
+        }
+    }
+}
+</script>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TPots_JaPrajeshNasitFreeShippingBar – Load More PLP module
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="after.body.start">
+            <block
+                name="tpots.freeshipping.bar"
+                template="TPots_JaPrajeshNasitFreeShippingBar::freeshippingbar.phtml"
+                before="-">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">
+                        TPots\JaPrajeshNasitFreeShippingBar\ViewModel\FreeShipping
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

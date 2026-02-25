@@ -8,11 +8,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="category.product.list.additional">
+        <referenceContainer name="content">
             <block class="TPots\JaPrajeshNasit\Block\LoadMore"
                    name="japrajesh.loadmore.search"
                    template="TPots_JaPrajeshNasit::catalog/product/list/load_more.phtml"
-                   after="-"/>
+                   after="product_list_toolbar"/>
         </referenceContainer>
     </body>
 </page>
